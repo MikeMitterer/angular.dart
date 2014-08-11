@@ -140,7 +140,7 @@ abstract class NgControl implements AttachAware, DetachAware {
   void addControl(NgControl control) {
     _controls.add(control);
     if (control.name != null) {
-      _controlByName.putIfAbsent(control.name, () => <NgControl>[]).add(control);
+      _controlByName.putIfAbsent(control.name, () => new List<NgControl>()).add(control);
     }
   }
 
